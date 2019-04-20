@@ -5,51 +5,193 @@
     <link rel="stylesheet" href="reset.css" type="text/css"/>
     <link rel="stylesheet" href="style.css" type="text/css"/>
   </head>
+  <style>
+    body {
+      margin: 10px 30px 0px 30px;
+      font-family: arial,sans-serif;
+      
+    }
+    a {
+      text-decoration: none;
+      padding-left: 10px;
+    }
+
+    a:hover {
+      text-decoration-line:underline;
+    }
+
+    ul {
+      list-style-type:none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline;
+      
+    }
+
+    .nav-right {
+      float: right;
+      font-size: 13px;
+      line-height: 24px;
+      padding-left: 10px;
+    }
+
+    .nav-right a {
+      color:black;
+    }
+
+    .nav-center {
+      display: inline;
+
+    }
+
+    #btnSignIn {
+      list-style: none;
+      text-align: center;
+      background-color: #4683ea;
+      line-height: 28px;
+      padding: 0 12px;
+      margin-left: 15px;
+      color: #ffffff;
+      border: 1px solid #4285f4;
+      font-weight: bold;
+      outline: none;
+      border-radius: 2px;
+    }
+
+    .main-image {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #apps {
+      display:inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+      background: url(images/google_icons.png) -137px -43px;
+    }
+
+    .searchbar {
+      display: flex;
+      position: fixed;
+      top: 50%;
+      left: 35%;
+    }
+
+    #searchInput {
+      width: 50%;
+      height: 25px;
+      margin: 0 auto;
+      border: none;
+      border:solid 1px #ccc;
+      border-radius: 9999em;
+      font: 16px arial,sans-serif;
+      line-height: 34px;
+      height: 34px !important;
+      box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+      border-color: rgba(223,225,229,0);
+      padding-left: 15px;
+    }
+
+    .searchBtn{
+      background-color: #f2f2f2;
+      border: 1px solid #f2f2f2;
+      border-radius: 4px;
+      color: #5F6368;
+      cursor: pointer;
+      font-family: arial,sans-serif;
+      font-size: 14px;
+      margin: 11px 4px;
+      padding: 12px 40px;
+      text-align: center;
+    }
+
+    #searchButtons {
+      margin-left: 40px;
+    }
+
+    #footer {
+      width: 100%;
+      height: 28px;
+      position: absolute;
+      bottom: 0px;
+      padding: 13px 7px 13px 17px;
+      left: 0;
+      bottom: 0;
+      text-align: left;
+      color: rgba(0,0,0,.54);
+      border-bottom: 1px solid #e4e4e4;
+      background: #f2f2f2;
+      border-top: 1px solid #e4e4e4;
+      line-height: 40px;
+      font-size: 15px;
+    }
+
+    .footerLeft{
+      position: absolute;
+      text-align: left;
+    }
+
+    .footerRight{
+       position: absolute;
+       right:0;
+       margin-right: 50px;
+    }
+
+    #footer a {
+      color:rgba(0,0,0,.54);
+    }
+
+  </style>
   <body>
-    <nav class="nav nav-left">
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Store</a></li>
-      </ul>
-    </nav>
     <nav class="nav nav-right">
       <ul>
         <li><a href="#">Gmail</a></li>
         <li><a href="#">Images</a></li>
-        <li><a href="#">Options</a></li> <!-- Need to add the options Icon Here -->
-        <li><a href="#">Sign in</a></li>
+        <li>
+            <img id="apps" src="images/img_trans.gif" width="1" height="1" alt="Apps"/>
+        </li>
+        <li>
+          <button type="button" class="signIn_btn" id="btnSignIn">Sign In</button>
+        </li>
       </ul>
     </nav>
     <div class="main-image">
-      <img src="images/googlelogo_color_272x92dp.png" alt="Google Logo"/>
+      <img src="images/googlelogo_color_272x92dp.png" alt="Google"/>
     </div>
     <div class="searchbar">
-      <form>
-        <input type="Text"/>
-        <button>Google Search</button>
-        <button>I'm Feeling Lucky</button>
-      </form>
+      <div>
+        <form>
+          <input id="searchInput" type="Text" size="552px"/>
+          <br><br>
+          <div id="searchButtons">
+            <input class="searchBtn" type="submit" value="Google Search">
+            <input class="searchBtn" type="submit" value="I'm Feeling Lucky">
+        </div>
+        </form>
+      </div>
     </div>
-    <div class="nav">
-      <p>Google offered in: </p>
+  <div id="footer">
+    <span class="footerLeft">
       <ul>
-        <li><a href="#">Afrikaans</a></li>
-        <li><a href="#">Sesotho</a></li>
-        <li><a href="#">isiZulu</a></li>
-        <li><a href="#">IsiXhosa</a></li>
-        <li><a href="#">Setswana</a></li>
-        <li><a href="#">Northern Sotho</a></li>
+        <li><a href="#">Advertising</a></li>
+        <li><a href="#">Business</a></li>
       </ul>
+    </span>
+    <span class="footerRight">
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </span>
     </div>
-    <footer class="country">South Africa</footer>
-    <footer class="nav footer-left">
-      <li><a href="#">Advertising</a></li>
-      <li><a href="#">Business</a></li>
-    </footer>
-    <footer class="nav footer-right">
-      <li><a href="#">Privacy</a></li>
-      <li><a href="#">Terms</a></li>
-      <li><a href="#">Settings</a></li>
-    </footer>
+  </div>
   </body>
 </html>
